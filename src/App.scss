@@ -1,0 +1,81 @@
+.found {
+  background-color: rgba(255, 246, 25, 0.63);
+}
+.no-result {
+  margin-top: 50px !important;
+}
+.app {
+  header {
+    margin-top: 44px;
+    margin-bottom: 46px;
+    align-items: center;
+    box-shadow: none;
+  }
+  &_title {
+    width: 50%;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+  }
+  &_search {
+    width: 50%;
+    margin-top: 7px !important;
+    input {
+      padding: 11px 0;
+    }
+    button {
+      padding: 5px;
+    }
+  }
+}
+.count_result {
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 1px solid #c1c1c1;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .card {
+    max-width: 525px;
+    &_content {
+      margin: 15px 0;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0em;
+      &_title {
+        font-size: 24px;
+      }
+      &_text {
+        font-size: 16px;
+        span {
+          display: inline-block;
+          font-size: 18px;
+          line-height: 22px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+.article {
+  font-style: normal;
+  font-weight: 400;
+  font-family: Montserrat;
+  &_title {
+    font-size: 36px !important;
+  }
+  &_content {
+    font-size: 18px !important;
+  }
+  &_back {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+  }
+}

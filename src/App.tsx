@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.scss";
+import Box from "@mui/material/Box";
+import { getArticles } from "./components/state/appSlice";
+import { useDispatch} from "react-redux";
+import Homepage from "./components/Homepage";
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
+import Articlepage from "./components/Articlepage";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getArticles());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className="app">
+      <Switch>
+        <Route path="/:topick_id">
+          <Articlepage />
+        </Route>
+        <Route path="/">
+          <Homepage />
+        </Route>
+      </Switch>
+    </Box>
   );
 }
 
+
 export default App;
+
+export type articleType = {
+   content: string
+   description: string
+   title: string
+   url: string
+}
