@@ -6,6 +6,7 @@ import Article from "./Article";
 import Header from "./Header";
 import { RootState } from "./state/store";
 import { articleType } from "../App";
+
 const Homepage = () => {
   const { loading, articles, error, search } = useSelector((state: RootState) => state.app);
   const filteredArticles = articles.filter((article: articleType) => {
